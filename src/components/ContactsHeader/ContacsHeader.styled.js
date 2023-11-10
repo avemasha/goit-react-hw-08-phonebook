@@ -1,9 +1,16 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+
+export const Email = styled.p`
+font-size: 25px;
+  font-weight: bold;
+  color: rgb#5968c7;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 30px;
+`;
 
 
-
-export const NavigationLink = styled(NavLink)`
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,19 +24,16 @@ export const NavigationLink = styled(NavLink)`
   border-radius: 5px;
   max-height: 50px;
   cursor: pointer;
-  /* opacity: 0.5; */
   &:hover,
   &:focus {
     background-color: rgb(204, 207, 44);
   }
-  &:not(:last-child) {
-    margin-left: auto;
-    margin-right: 40px;
-  }
+`;
 
-  &.active {
-    pointer-events: none;
-    /* opacity: 1; */
-    background-color: rgb(204, 207, 44);
-  }
+export const Box = styled.header`
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  /* margin-bottom: 50px; */
+  border-bottom: 1px solid rgb(152, 154, 27);
 `;

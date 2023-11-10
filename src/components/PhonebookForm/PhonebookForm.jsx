@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from '../store/operations';
+import { addContacts } from 'redux/operations';
 import { Formik } from 'formik';
 import { Notify } from 'notiflix';
 import { Input, Forma, Label, Button, ErMessage } from './PhonebookForm.styled';
-import { selectContacts } from 'components/store/selectors';
+import { selectContacts } from 'redux/selectors';
 
 const formValues = {
   name: '',

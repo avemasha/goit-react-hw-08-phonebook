@@ -1,31 +1,44 @@
-import {PhonebookForm} from './PhonebookForm/PhonebookForm'
-import { HeaderTitle } from './Header/Header';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const RegisterPage = lazy(() => import('../pages/Register/Register'));
+const LoginPage = lazy(() => import('../pages/Login/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 
-import { ContactsList } from './Contacts/ContactsList';
-import { FilterForm } from './Filter/FilterForm'
 
 
-
-export default function App() {
+export const  App = () => {
 
   return (
-    <div
-      style={{
-        width: '1000px',
-        margin: '0 auto',
-        padding: '0 50px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <HeaderTitle />
-      <PhonebookForm />
-      <FilterForm />
-   
-        <ContactsList />
-      
-    </div>
+    <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<HomePage />} />
+      <Route
+        path="/register"
+        element={
+          <RestrictedRoute
+            redirectTo="/contacts"
+            component={<RegisterPage />}
+          />
+        }
+      />
+      <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 
 }

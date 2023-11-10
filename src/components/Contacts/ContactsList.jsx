@@ -4,10 +4,10 @@ import { List } from './ContactsList.styled';
 
 import { ContactItem } from './ContactItem';
 
-import { selectVisibleContacts } from '../store/selectors';
+import { selectVisibleContacts } from 'redux/selectors';
 
 import { useEffect } from 'react';
-import { fetchContacts } from 'components/store/operations';
+import { fetchContacts } from 'redux/operations';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
