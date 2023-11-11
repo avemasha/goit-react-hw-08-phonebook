@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 export const getContacts = state => state.contacts;
-// export const getFilter = state => state.filter;
+
 export const getIsLoading = state => state.contactsisLoading;
 export const getError = state => state.contactserror;
 
@@ -18,4 +18,7 @@ export const selectVisibleContacts = createSelector(
     );
 
     export const getIsLoggedIn = state => state.auth.isLoggedIn;
+
 export const getUser = state => state.auth.user;
+
+export const selectIsRefreshing = state => state.auth.isRefreshing;

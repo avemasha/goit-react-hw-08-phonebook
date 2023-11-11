@@ -8,9 +8,9 @@ import { getUser } from 'redux/selectors';
 
 export const Layout = () => {
   const user = useSelector(getUser);
-  console.log(user.email);
+ 
   const { isLoggedIn } = useAuth();
-  console.log(isLoggedIn);
+ 
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       {isLoggedIn ? <LoginHeader name={user.name} /> : <Header />}
