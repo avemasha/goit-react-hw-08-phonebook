@@ -20,7 +20,8 @@ export const NavigationLink = styled(NavLink)`
   /* opacity: 0.5; */
   &:hover,
   &:focus {
-    background-color: rgb(204, 207, 44);
+    background-color: blue;
+    color: white;
   }
   &:not(:last-child) {
     margin-left: auto;
@@ -30,6 +31,7 @@ export const NavigationLink = styled(NavLink)`
   &.active {
     pointer-events: none;
     /* opacity: 1; */
-    background-color: rgb(204, 207, 44);
+    background-color: blue;
+    color: white;
   }
 `;

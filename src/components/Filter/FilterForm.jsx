@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/selectors';
 
 import { changeFilter } from 'redux/filterSlice';
-import { Input, Label } from './FilterForm.styled';
+import { Input, Label, Paragraph } from './FilterForm.styled';
 
 export const FilterForm = () => {
   const value = useSelector(selectFilter);
@@ -17,7 +17,11 @@ export const FilterForm = () => {
 
   return (
     <Label>
-      Enter contact name
+      <Paragraph>
+      Enter contact name{' '}<span role="img" aria-label="Searching icon">
+            👀
+          </span>
+          </Paragraph>
       <Input type="text" value={value} onChange={onChange}></Input>
     </Label>
   );

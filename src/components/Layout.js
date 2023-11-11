@@ -13,7 +13,7 @@ export const Layout = () => {
   console.log(isLoggedIn);
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
-      {isLoggedIn ? <LoginHeader email={user.email} /> : <Header />}
+      {isLoggedIn ? <LoginHeader name={user.name} /> : <Header />}
 
       <Suspense fallback={null}>
         <Outlet />

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Email = styled.p`
+export const Name = styled.p`
 font-size: 25px;
   font-weight: bold;
   color: rgb#5968c7;
@@ -26,7 +26,8 @@ export const Button = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: rgb(204, 207, 44);
+    background-color: blue;
+    color: white;
   }
 `;
 
