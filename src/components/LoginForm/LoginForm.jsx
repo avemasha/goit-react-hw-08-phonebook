@@ -30,7 +30,9 @@ const formValues = {
     return (
         <Formik initialValues={formValues} onSubmit={handleSubmit}>
           <Forma autoComplete="off">
-            <Title>Log in</Title>
+            <Title>Log in {' '}<span role="img" aria-label="Login icon">
+            👻
+          </span></Title>
             <Label htmlFor="email">
               Email
               <Input type="email" name="email" required />

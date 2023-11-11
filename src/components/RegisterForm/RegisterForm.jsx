@@ -32,7 +32,9 @@ const formValues = {
     return (
         <Formik initialValues={formValues} onSubmit={handleSubmit}>
           <Forma autoComplete="off">
-            <Title>Register</Title>
+            <Title>Register{' '}<span role="img" aria-label="Register icon">
+            👋
+          </span></Title>
             <Label htmlFor="name">
               Username
               <Input
